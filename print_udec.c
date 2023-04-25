@@ -6,7 +6,7 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:06:20 by oseivane          #+#    #+#             */
-/*   Updated: 2023/04/24 10:18:11 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:33:41 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	print_udec(unsigned int n)
 	char	*str;
 	int		leng;
 
-	str = ft_convert_base(n, "0123456789");
+	str = ft_convert_ubase(n, "0123456789");
 	leng = print_string(str);
 	free (str);
 	return (leng);
