@@ -6,11 +6,11 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 10:44:22 by oseivane          #+#    #+#             */
-/*   Updated: 2023/04/24 11:05:57 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/04/29 17:24:55 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	tipo_variable(va_list args, char conv)
 {
@@ -21,7 +21,7 @@ int	tipo_variable(va_list args, char conv)
 	else if (conv == 'd' || conv == 'i')
 		return (print_nb(va_arg(args, int)));
 	else if (conv == 'p')
-		return (print_ptr(va_arg(args, unsigned long long)));
+		return (print_ptr(va_arg(args, void *)));
 	else if (conv == 'u')
 		return (print_udec(va_arg(args, unsigned int)));
 	else if (conv == 'x')

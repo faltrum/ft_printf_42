@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
+/*   print_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 12:05:51 by oseivane          #+#    #+#             */
-/*   Updated: 2023/04/20 10:27:08 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:12:41 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	print_string(char *str)
 {
 	int	i;
 	int	error;
 
+	if (str == NULL)
+		str = "(null)";
 	i = 0;
 	while (str[i] != '\0')
 	{

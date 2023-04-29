@@ -6,15 +6,15 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 10:50:50 by oseivane          #+#    #+#             */
-/*   Updated: 2023/04/20 10:58:47 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/04/27 13:12:11 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-unsigned int	ft_number_size(int number)
+unsigned int	ft_number_size(unsigned long long number)
 {
-	unsigned int	length;
+	unsigned long long	length;
 
 	length = 0;
 	if (number == 0)

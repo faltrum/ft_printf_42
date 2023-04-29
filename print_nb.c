@@ -6,11 +6,11 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 12:06:35 by oseivane          #+#    #+#             */
-/*   Updated: 2023/04/24 12:42:15 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:07:07 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	print_nb(int n)
 {

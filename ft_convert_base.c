@@ -6,11 +6,11 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 14:16:30 by oseivane          #+#    #+#             */
-/*   Updated: 2023/04/24 12:42:55 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/04/29 17:21:37 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static void	ft_ext_convert_base(long int n, char *string, char *base)
 {
@@ -39,7 +39,7 @@ char	*ft_convert_base(int n, char *base)
 	number = (long int) n;
 	length = ft_number_size(n);
 	string = malloc(sizeof(char) * (length + 1));
-	if (string == NULL)
+	if (!string)
 		return (NULL);
 	ft_bzero(string, (size_t)length + 1);
 	ft_ext_convert_base(number, string, base);

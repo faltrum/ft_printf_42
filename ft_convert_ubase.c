@@ -6,14 +6,16 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:28:03 by oseivane          #+#    #+#             */
-/*   Updated: 2023/04/25 16:36:27 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:17:18 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static void	ft_ext_convert_ubase(unsigned int n, char *string, char *base)
 {
+	if (n < 0)
+		string = NULL;
 	if (n >= (unsigned int)ft_strlen(base))
 	{
 		ft_ext_convert_ubase(n / ft_strlen(base), string, base);

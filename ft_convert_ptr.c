@@ -6,14 +6,16 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 14:16:30 by oseivane          #+#    #+#             */
-/*   Updated: 2023/04/24 11:23:49 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/04/29 17:19:30 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-static void	ft_ext_convert_ptr(unsigned long long n, char *string, char *base)
+void	*ft_ext_convert_ptr(unsigned long long n, char *string, char *base)
 {
+	if (n < 0)
+		string = NULL;
 	if (n >= (unsigned long long)ft_strlen(base))
 	{
 		ft_ext_convert_ptr(n / ft_strlen(base), string, base);
@@ -21,6 +23,7 @@ static void	ft_ext_convert_ptr(unsigned long long n, char *string, char *base)
 	}
 	else
 		ft_add_str(string, base[n]);
+	return (string);
 }
 
 char	*ft_convert_ptr(unsigned long long n, char *base)
@@ -29,7 +32,7 @@ char	*ft_convert_ptr(unsigned long long n, char *base)
 	int						length;
 	char					*string;
 
-	number = (unsigned long long) n;
+	number = n;
 	length = ft_number_size(n);
 	string = malloc(sizeof(char) * (length + 1));
 	if (string == NULL)

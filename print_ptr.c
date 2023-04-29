@@ -6,22 +6,26 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 12:07:46 by oseivane          #+#    #+#             */
-/*   Updated: 2023/04/24 12:43:49 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/04/29 17:35:25 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int	print_ptr(unsigned long long p)
+int	print_ptr(void *p)
 {
-	char	*str;
-	char	*new;
-	int		leng;
+	char				*str;
+	unsigned long long	pnb;
+	char				*new;
+	int					leng;
 
-	str = ft_convert_ptr(p, "0123456789abcdef");
+	pnb = (unsigned long long)p;
+	str = ft_convert_ptr(pnb, "0123456789abcdef");
 	new = ft_strjoin("0x", str);
-	leng = print_string(new);
+	if (write(1, "0x", 2) < 0)
+		return (-1);
+	leng = print_string(str);
 	free(str);
 	free(new);
-	return (leng);
+	return (leng + 2);
 }
