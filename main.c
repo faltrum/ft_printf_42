@@ -6,7 +6,7 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:59:07 by oseivane          #+#    #+#             */
-/*   Updated: 2023/04/29 16:54:42 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/05/02 18:23:36 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ int	main(void)
 	j = printf("%s\n", (char *)NULL);
 	printf("tamano: %d,  %d\n", i, j);
 //Imprimir un puntero y comparar con Printf original
-	i = ft_printf("%p\n", "");
-	j = printf("%p\n", "");
+	i = ft_printf("un puntero vacio: %pp%p%p\n", (void *)LONG_MAX + 423856, (void *)0, (void *)INT_MAX);
+	j = printf("un puntero vacio: %pp%p%p\n", (void *)LONG_MAX + 423856, (void *)0, (void *)INT_MAX);
 	printf("tamano: %d,  %d\n", i, j);
 //Imprimir un unsigned int y comparar con Printf original
 	i = ft_printf("%u\n", unumber);

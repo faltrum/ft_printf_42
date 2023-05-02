@@ -6,7 +6,7 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:28:03 by oseivane          #+#    #+#             */
-/*   Updated: 2023/04/29 16:17:18 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/04/29 18:35:15 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 static void	ft_ext_convert_ubase(unsigned int n, char *string, char *base)
 {
-	if (n < 0)
-		string = NULL;
 	if (n >= (unsigned int)ft_strlen(base))
 	{
 		ft_ext_convert_ubase(n / ft_strlen(base), string, base);
@@ -33,7 +31,7 @@ char	*ft_convert_ubase(unsigned int n, char *base)
 	int					length;
 	char				*string;
 
-	number = (unsigned int) n;
+	number = (unsigned int)n;
 	length = ft_number_size(n);
 	string = malloc(sizeof(char) * (length + 1));
 	if (string == NULL)

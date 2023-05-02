@@ -6,7 +6,7 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 12:05:51 by oseivane          #+#    #+#             */
-/*   Updated: 2023/04/27 14:12:41 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/04/29 18:16:42 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ int	print_string(char *str)
 	int	error;
 
 	if (str == NULL)
+	{
 		str = "(null)";
+	}
 	i = 0;
 	while (str[i] != '\0')
 	{

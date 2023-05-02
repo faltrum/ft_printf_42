@@ -6,7 +6,7 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 12:07:46 by oseivane          #+#    #+#             */
-/*   Updated: 2023/04/29 17:35:25 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/05/02 19:01:37 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,25 @@
 int	print_ptr(void *p)
 {
 	char				*str;
-	unsigned long long	pnb;
 	char				*new;
 	int					leng;
 
-	pnb = (unsigned long long)p;
-	str = ft_convert_ptr(pnb, "0123456789abcdef");
-	new = ft_strjoin("0x", str);
-	if (write(1, "0x", 2) < 0)
+	str = ft_convert_ptr((unsigned long long)p, "0123456789abcdef");
+	if (str == NULL)
+	{
+		free(str);
 		return (-1);
-	leng = print_string(str);
+	}
+	new = ft_strjoin("0x", str);
+	if (new == NULL)
+	{
+		free(new);
+		if (str)
+			free(str);
+		return (-1);
+	}
+	leng = print_string(new);
 	free(str);
 	free(new);
-	return (leng + 2);
+	return (leng);
 }

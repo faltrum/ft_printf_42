@@ -6,7 +6,7 @@
 #    By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/27 10:25:50 by oseivane          #+#    #+#              #
-#    Updated: 2023/04/29 17:37:13 by oseivane         ###   ########.fr        #
+#    Updated: 2023/04/29 18:32:24 by oseivane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,8 @@ CFLAGS  =  -Wall -Werror -Wextra
 	@ $(CC) $(CFLAGS) -c $< -o $@
 	@echo "compiling: $<"
 
-$(NAME):	$(OBJS)
-			ar -rcs $(NAME) $(OBJS)
+$(NAME):	$(OBJ)
+			ar -rcs $(NAME) $(OBJ)
 
 all:		$(NAME)
 
